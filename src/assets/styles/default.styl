@@ -1,0 +1,51 @@
+html
+  font-size 62.5% // 10px
+
+body
+  text-rendering optimizeSpeed
+  scroll-behavior smooth
+  font-family mainFont
+  font-size 1.6rem // 16px
+  min-width 32rem
+  min-height 100vh
+  line-height 1.2
+  overflow-x hidden
+  &.b-popup-open
+    overflow hidden
+
+.l-page
+  a[class]
+    text-decoration none
+    color inherit
+
+  button[class]
+    font-family inherit
+    font-size inherit
+    font-weight inherit
+    background-color transparent
+    border none
+    cursor pointer
+    padding 0
+    noOutline()
+
+  img[class]
+    display block
+    max-width 100%
+    height auto
+
+  textarea[class]
+    resize none
+
+  [hidden]
+    display none
+
+  .hidden
+    opacity 0
+    visibility hidden
+
+  *
+    @media (prefers-reduced-motion: reduce)
+      scroll-behavior auto !important
+      animation-duration .01ms !important
+      transition-duration .01ms !important
+      animation-iteration-count 1 !important

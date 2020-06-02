@@ -1,0 +1,35 @@
+include ../includeMixins
+block variables
+  - let theme = '#880088';
+
+doctype html
+html(lang="ru-RU")
+  head
+    title #{title}
+    meta(charset="utf-8")
+    meta(http-equiv='X-UA-Compatible' content="IE=edge")
+    meta(name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="description" content="")
+    meta(name="keywords" content="")
+    meta(name="author" content="Валентин <astrotrain55@gmail.com>")
+    meta(name="copyright" content!='<?=date("Y")?>')
+    //- Chrome, Firefox OS and Opera
+    meta(name="theme-color" content=theme)
+    //- Windows Phone
+    meta(name="msapplication-navbutton-color" content=theme)
+    //- iOS Safari
+    meta(name="apple-mobile-web-app-status-bar-style" content=theme)
+    //- Иконка сайта
+    link(rel="icon" href!="./favicon.ico" type="image/x-icon")
+  body(style="height:3100px;")
+    <?php require_once("../widget-paginator.php"); ?>
+    .l-page#top(class=main ? "main-page" : "")
+      .l-container
+        +header()
+        block banner
+        main.l-content
+          block content
+      +footer()
+      +debug()
+    +templates()

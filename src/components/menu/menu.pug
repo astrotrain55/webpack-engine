@@ -1,0 +1,12 @@
+mixin menuTop(name, link)
+  li
+    a(href=link)
+      button #{name} d
+
+mixin menu(menuList = [])
+  nav
+    ul
+      each link, name in menuList
+        +menuTop(name, link)
+      if(block)
+        block
