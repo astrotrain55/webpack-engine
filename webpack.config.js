@@ -86,11 +86,25 @@ function rules() {
     },
     {
       test: /\.(png|jpe?g|svg|gif)$/,
-      use: ['file-loader'],
+      use: [{
+        loader: 'file-loader',
+        options: {
+          publicPath: `/${getNameProject()}/dist/assets/images/`,
+          outputPath: '/assets/images/',
+          name: '[name].[hash].[ext]',
+        },
+      }],
     },
     {
       test: /\.(ttf|woff|woff2|eot)$/,
-      use: ['file-loader'],
+      use: [{
+        loader: 'file-loader',
+        options: {
+          publicPath: `/${getNameProject()}/dist/assets/fonts/`,
+          outputPath: '/assets/fonts/',
+          name: '[name].[hash].[ext]',
+        },
+      }],
     },
     {
       test: /\.pug$/,
@@ -139,7 +153,7 @@ function optimization() {
 }
 
 function filename(ext) {
-  return isDev ? `[name].${ext}` : `[name].[chunkhash].${ext}`;
+  return isDev ? `assets/${ext}/[name].${ext}` : `assets/${ext}/[name].[chunkhash].${ext}`;
 }
 
 function cssLoaders(stylus) {
@@ -178,7 +192,7 @@ function plugins() {
     }),
     ...PAGES.map(page => new HTMLWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/, '.php')}`,
+      filename: `./${page.replace(/\.pug/, '.html')}`,
     })),
     new HtmlWebpackHarddiskPlugin(),
     new CleanWebpackPlugin(),
@@ -206,6 +220,7 @@ function plugins() {
   if (isProd) {
     base.push(new MiniCssExtractPlugin({
       filename: filename('css'),
+      chunkFilename: filename('css'),
     }));
   }
 

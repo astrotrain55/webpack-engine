@@ -1,1 +1,1 @@
-{ "publicPath": "./", "js": [ "./vendors~main.af3306eca6efc22217df.js", "./main.09df840f17d82fb23700.js" ], "css": [ "./main.09df840f17d82fb23700.css" ] }
+{ "publicPath": "./", "js": [ "./assets/js/vendors~main.8e421c80bfe28fc08833.js", "./assets/js/main.6041d70f1984b5ee58c6.js" ], "css": [ "./assets/css/main.6041d70f1984b5ee58c6.css" ] }

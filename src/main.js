@@ -4,6 +4,7 @@ import mobx from 'root/store';
 import { Ajax, SmoothScroll, jq } from 'root/libs/';
 import $ from './common/tools';
 import './assets/styles/index.styl';
+import image from './assets/images/skulltag.png';
 import Vue from 'vue';
 import App from './vue/App';
 import store from './vue/store/';
@@ -69,5 +70,7 @@ async function testJq(arParams) {
     console.log(jq[fn](collection));
   });
 
-  jq.dom.insertEl(document.body, document.createElement('tagName'));
+  const img = document.createElement('img');
+  img.src = image;
+  jq.dom.insertEl(document.body, img);
 }

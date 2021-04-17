@@ -22,6 +22,7 @@
   .vue-app
     display inline-block
     border 1px solid
+    background-color rgba(white, .5)
   h1
     margin 20px
 </style>

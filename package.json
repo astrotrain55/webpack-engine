@@ -34,7 +34,7 @@
     "axios": "^0.21.1",
     "dialog-polyfill": "^0.5.1",
     "eventslibjs": "^1.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "mobx": "^5.15.4",
     "qs": "^6.9.3",
     "smooth-scroll": "^16.1.3",
